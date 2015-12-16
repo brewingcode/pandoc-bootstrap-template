@@ -50,7 +50,7 @@ $endfor$
   <div class="container-fluid">
     <div class="row">
       $if(toc)$
-      <div id="$idprefix$TOC" class="span3">
+      <div id="$idprefix$TOC" class="col-md-3">
         <div class="well toc">
         <ul>
           <li class="nav-header">Table of Contents</li>
@@ -59,7 +59,7 @@ $endfor$
         </div>
       </div>
       $endif$
-      <div class="span$if(toc)$9$else$12$endif$">
+      <div class="$if(toc)$col-md-9$else$col-md-12$endif$">
       $for(include-before)$
       $include-before$
       $endfor$
