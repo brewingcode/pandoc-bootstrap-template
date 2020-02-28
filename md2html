@@ -1,0 +1,11 @@
+#!/bin/bash
+#
+# usage: md2html [INFILE] [OUTFILE]
+#
+# Converts INFILE (Markdown) to OUTFILE (HTML) using pandoc. Defaults to stdin
+# and stdout.
+
+here="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+pandoc "${1:-/dev/stdin}" --from markdown_github --to html -o "${2:-/dev/stdout}" \
+  --template "$here/template.html" --css "$here/bootstrap.min.css" \
+  --self-contained --toc --toc-depth 2
